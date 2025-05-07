@@ -1361,7 +1361,7 @@
                 <maximum>0</maximum>
             </output>
             <output>
-                <group>[QuickEffectRack1_[Channel2]</group>
+                <group>[QuickEffectRack1_[Channel2]]</group>
                 <key>enabled</key>
                 <status>0xB1</status>
                 <midino>0x32</midino>
