@@ -629,9 +629,9 @@
                 </options>
             </control>
             <control>
-                <group>[Master]</group>
-                <key>maximize_library</key>
-                <description>Toggle maximizing the library</description>
+                <group>[Channel2]</group>
+                <key>quantize</key>
+                <description>Quantize deck B</description>
                 <status>0xB0</status>
                 <midino>0x6A</midino>
                 <options>
@@ -639,11 +639,31 @@
                 </options>
             </control>
             <control>
+                <group>[Channel2]</group>
+                <key>slip_enabled</key>
+                <description>Slip mode deck B</description>
+                <status>0xB0</status>
+                <midino>0x6B</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+            <control>
                 <group>[Channel1]</group>
-                <key>reloop_exit</key>
-                <description>Deck 1: Switch Loop on/off</description>
+                <key>beatloop_activate</key>
+                <description>Deck 1: Set Loop-In marker, Toggle on/off</description>
                 <status>0xB0</status>
                 <midino>0x54</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>reloop_toggle</key>
+                <description>Deck 2: Switch Loops on/off</description>
+                <status>0xB1</status>
+                <midino>0x55</midino>
                 <options>
                     <normal/>
                 </options>
@@ -660,10 +680,20 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>reloop_exit</key>
-                <description>Deck 1: Switch Loop on/off</description>
+                <key>beatloop_activate</key>
+                <description>Deck 2: Set Loop-In marker, Toggle on/off</description>
                 <status>0xB1</status>
                 <midino>0x54</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>reloop_toggle</key>
+                <description>Deck 2: Switch Loop on/off</description>
+                <status>0xB1</status>
+                <midino>0x55</midino>
                 <options>
                     <normal/>
                 </options>
@@ -719,11 +749,21 @@
                 </options>
             </control>
             <control>
-                <group>[PreviewDeck1]</group>
-                <key>LoadSelectedTrackAndPlay</key>
-                <description>Load selected track in the preview deck and play</description>
+                <group>[Channel1]</group>
+                <key>quantize</key>
+                <description>Quantize deck A</description>
                 <status>0xB0</status>
                 <midino>0x68</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>slip_enabled</key>
+                <description>Slip mode deck A</description>
+                <status>0xB0</status>
+                <midino>0x69</midino>
                 <options>
                     <normal/>
                 </options>
@@ -1252,9 +1292,18 @@
         <outputs>
             <output>
                 <group>[Channel1]</group>
-                <key>hotcue_2_enabled</key>
+                <key>hotcue_2_status</key>
                 <status>0xB0</status>
                 <midino>0x3C</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel1]</group>
+                <key>hotcue_2_status</key>
+                <status>0xB0</status>
+                <midino>0x3D</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1270,9 +1319,18 @@
             </output>
             <output>
                 <group>[Channel2]</group>
-                <key>hotcue_7_enabled</key>
+                <key>hotcue_7_status</key>
                 <status>0xB1</status>
                 <midino>0x46</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel2]</group>
+                <key>hotcue_7_status</key>
+                <status>0xB1</status>
+                <midino>0x47</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1333,9 +1391,18 @@
             </output>
             <output>
                 <group>[Channel2]</group>
-                <key>hotcue_8_enabled</key>
+                <key>hotcue_8_status</key>
                 <status>0xB1</status>
                 <midino>0x48</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel2]</group>
+                <key>hotcue_8_status</key>
+                <status>0xB1</status>
+                <midino>0x49</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1360,9 +1427,18 @@
             </output>
             <output>
                 <group>[Channel2]</group>
-                <key>hotcue_5_enabled</key>
+                <key>hotcue_5_status</key>
                 <status>0xB1</status>
                 <midino>0x42</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel2]</group>
+                <key>hotcue_5_status</key>
+                <status>0xB1</status>
+                <midino>0x43</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1378,7 +1454,7 @@
             </output>
             <output>
                 <group>[Channel2]</group>
-                <key>hotcue_6_enabled</key>
+                <key>hotcue_6_status</key>
                 <status>0xB1</status>
                 <midino>0x44</midino>
                 <on>0x00</on>
@@ -1386,10 +1462,28 @@
                 <maximum>0</maximum>
             </output>
             <output>
+                <group>[Channel2]</group>
+                <key>hotcue_6_status</key>
+                <status>0xB1</status>
+                <midino>0x45</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
                 <group>[Channel1]</group>
-                <key>hotcue_7_enabled</key>
+                <key>hotcue_7_status</key>
                 <status>0xB0</status>
                 <midino>0x46</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel1]</group>
+                <key>hotcue_7_status</key>
+                <status>0xB0</status>
+                <midino>0x47</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1405,9 +1499,18 @@
             </output>
             <output>
                 <group>[Channel1]</group>
-                <key>hotcue_8_enabled</key>
+                <key>hotcue_8_status</key>
                 <status>0xB0</status>
                 <midino>0x48</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel1]</group>
+                <key>hotcue_8_status</key>
+                <status>0xB0</status>
+                <midino>0x49</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1459,9 +1562,18 @@
             </output>
             <output>
                 <group>[Channel1]</group>
-                <key>hotcue_5_enabled</key>
+                <key>hotcue_5_status</key>
                 <status>0xB0</status>
                 <midino>0x42</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel1]</group>
+                <key>hotcue_5_status</key>
+                <status>0xB0</status>
+                <midino>0x43</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1486,7 +1598,7 @@
             </output>
             <output>
                 <group>[Channel2]</group>
-                <key>hotcue_3_enabled</key>
+                <key>hotcue_3_status</key>
                 <status>0xB1</status>
                 <midino>0x3E</midino>
                 <on>0x00</on>
@@ -1494,10 +1606,28 @@
                 <maximum>0</maximum>
             </output>
             <output>
+                <group>[Channel2]</group>
+                <key>hotcue_3_status</key>
+                <status>0xB1</status>
+                <midino>0x3F</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
                 <group>[Channel1]</group>
-                <key>hotcue_6_enabled</key>
+                <key>hotcue_6_status</key>
                 <status>0xB0</status>
                 <midino>0x44</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel1]</group>
+                <key>hotcue_6_status</key>
+                <status>0xB0</status>
+                <midino>0x45</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1513,9 +1643,18 @@
             </output>
             <output>
                 <group>[Channel2]</group>
-                <key>hotcue_4_enabled</key>
+                <key>hotcue_4_status</key>
                 <status>0xB1</status>
                 <midino>0x40</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel2]</group>
+                <key>hotcue_4_status</key>
+                <status>0xB1</status>
+                <midino>0x41</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1531,9 +1670,18 @@
             </output>
             <output>
                 <group>[Channel2]</group>
-                <key>hotcue_1_enabled</key>
+                <key>hotcue_1_status</key>
                 <status>0xB1</status>
                 <midino>0x3A</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel2]</group>
+                <key>hotcue_1_status</key>
+                <status>0xB1</status>
+                <midino>0x3B</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1558,9 +1706,18 @@
             </output>
             <output>
                 <group>[Channel2]</group>
-                <key>hotcue_2_enabled</key>
+                <key>hotcue_2_status</key>
                 <status>0xB1</status>
                 <midino>0x3C</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel2]</group>
+                <key>hotcue_2_status</key>
+                <status>0xB1</status>
+                <midino>0x3D</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1576,9 +1733,18 @@
             </output>
             <output>
                 <group>[Channel1]</group>
-                <key>hotcue_3_enabled</key>
+                <key>hotcue_3_status</key>
                 <status>0xB0</status>
                 <midino>0x3E</midino>
+                <on>0x00</on>
+                <off>0x7B</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel1]</group>
+                <key>hotcue_3_status</key>
+                <status>0xB0</status>
+                <midino>0x3F</midino>
                 <on>0x00</on>
                 <off>0x7B</off>
                 <maximum>0</maximum>
@@ -1621,9 +1787,18 @@
             </output>
             <output>
                 <group>[Channel1]</group>
-                <key>hotcue_4_enabled</key>
+                <key>hotcue_4_status</key>
                 <status>0xB0</status>
                 <midino>0x40</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel1]</group>
+                <key>hotcue_4_status</key>
+                <status>0xB0</status>
+                <midino>0x41</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1666,9 +1841,18 @@
             </output>
             <output>
                 <group>[Channel1]</group>
-                <key>hotcue_1_enabled</key>
+                <key>hotcue_1_status</key>
                 <status>0xB0</status>
                 <midino>0x3A</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel1]</group>
+                <key>hotcue_1_status</key>
+                <status>0xB0</status>
+                <midino>0x3B</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
