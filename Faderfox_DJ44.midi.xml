@@ -150,6 +150,16 @@
             </control>
             <control>
                 <group>[Master]</group>
+                <key>maximize_library</key>
+                <description>Toggle maximizing the library</description>
+                <status>0xB0</status>
+                <midino>0x73</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>            
+            <control>
+                <group>[Master]</group>
                 <key>crossfader</key>
                 <description>MIDI Learned from 42 messages.</description>
                 <status>0xB0</status>
@@ -309,6 +319,16 @@
                 </options>
             </control>
             <control>
+                <group>[Channel1]</group>
+                <key>DJ44.nudgePlayposition</key>
+                <description>Deck 1: Strip Search Slow</description>
+                <status>0xB0</status>
+                <midino>0x19</midino>
+                <options>
+					<script-binding />
+                </options>
+            </control>
+            <control>
                 <group>[Channel2]</group>
                 <key>loop_out</key>
                 <description>Deck 1: Loop out</description>
@@ -338,6 +358,17 @@
                     <diff/>
                 </options>
             </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>DJ44.nudgePlayposition</key>
+                <description>Deck 2: Strip Search Slow</description>
+                <status>0xB1</status>
+                <midino>0x19</midino>
+                <options>
+					<script-binding />
+                </options>
+            </control>
+
             <control>
                 <group>[EffectRack1_EffectUnit2]</group>
                 <key>mix</key>
