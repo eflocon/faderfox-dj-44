@@ -44,6 +44,28 @@ DJ44.nudgePlayposition = function(channel, control, value, status, group) {
     }
 
     // Adjust sensitivity to how far you want to nudge per tick
+    var sensitivity = 0.001;
+
+    // Get current playposition (0.0 to 1.0)
+    var currentPos = engine.getValue(group, "playposition");
+
+    // Compute new position, clamp between 0.0 and 1.0
+    var newPos = currentPos + delta * sensitivity;
+    newPos = Math.max(0.0, Math.min(1.0, newPos));
+
+    engine.setValue(group, "playposition", newPos);
+};
+
+DJ44.nudgePlaypositionSlow = function(channel, control, value, status, group) {
+    var delta;
+
+    if (value <= 63) {
+        delta = value;
+    } else {
+        delta = value - 128;
+    }
+
+    // Adjust sensitivity to how far you want to nudge per tick
     var sensitivity = 0.00001;
 
     // Get current playposition (0.0 to 1.0)
