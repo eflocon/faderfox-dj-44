@@ -1,4 +1,10 @@
 var DJ44 = {};
+var BeatJumpControl = {
+    sizes: [0.25, 0.5, 1, 2, 4, 8, 16, 32],
+    currentIndex: 2  // default size = 1 beat
+};
+
+///////////////////////////////////////
 
 DJ44.init = function() {
     // Initialization code, if any
@@ -85,4 +91,28 @@ DJ44.onLoopAdjust = function(channel, control, value, status, group) {
         // Clockwise: double loop size
         engine.setValue(group, "loop_double", 1);
     }
+};
+DJ44.onBeatJumpSizeAdjust = function(channel, control, value, status, group) {
+    var newSize;
+ 
+    if (value < 0x40) {
+        // Clockwise - increase size
+        BeatJumpControl.currentIndex = Math.min(
+            BeatJumpControl.currentIndex + 1,
+            BeatJumpControl.sizes.length - 1
+        );
+    } else if (value > 0x40) {
+        // Counterclockwise - decrease size
+        BeatJumpControl.currentIndex = Math.max(
+            BeatJumpControl.currentIndex - 1,
+            0
+        );
+    }
+    newSize = BeatJumpControl.sizes[BeatJumpControl.currentIndex];
+
+    // Set the beatjump size in Mixxx
+    engine.setValue(group, "beatjump_size", newSize);
+
+    // Debug log
+    print("Set beatjump_size to: " + newSize);
 };
