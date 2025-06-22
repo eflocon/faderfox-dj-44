@@ -44,7 +44,7 @@ DJ44.nudgePlayposition = function(channel, control, value, status, group) {
     }
 
     // Adjust sensitivity to how far you want to nudge per tick
-    var sensitivity = 0.001;
+    var sensitivity = 0.002;
 
     // Get current playposition (0.0 to 1.0)
     var currentPos = engine.getValue(group, "playposition");
@@ -76,4 +76,13 @@ DJ44.nudgePlaypositionSlow = function(channel, control, value, status, group) {
     newPos = Math.max(0.0, Math.min(1.0, newPos));
 
     engine.setValue(group, "playposition", newPos);
+};
+DJ44.onLoopAdjust = function(channel, control, value, status, group) {
+    if (value > 0x40) {
+        // Counter-clockwise: halve loop size
+        engine.setValue(group, "loop_halve", 1);
+    } else if (value < 0x40) {
+        // Clockwise: double loop size
+        engine.setValue(group, "loop_double", 1);
+    }
 };

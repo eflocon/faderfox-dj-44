@@ -710,6 +710,15 @@
             </control>
             <control>
                 <group>[Channel1]</group>
+                <key>DJ44.onLoopAdjust</key>
+                <status>0xB0</status>
+                <midino>0x1A</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
                 <key>reloop_toggle</key>
                 <description>Deck 2: Switch Loops on/off</description>
                 <status>0xB1</status>
