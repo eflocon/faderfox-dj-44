@@ -718,6 +718,15 @@
                 </options>
             </control>
             <control>
+                <group>[Channel2]</group>
+                <key>DJ44.onLoopAdjust</key>
+                <status>0xB1</status>
+                <midino>0x1A</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
                 <group>[Channel1]</group>
                 <key>DJ44.onBeatJumpSizeAdjust</key>
                 <status>0xB0</status>
@@ -727,10 +736,19 @@
                 </options>
             </control>
             <control>
+                <group>[Channel2]</group>
+                <key>DJ44.onBeatJumpSizeAdjust</key>
+                <status>0xB1</status>
+                <midino>0x1B</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
                 <group>[Channel1]</group>
                 <key>reloop_toggle</key>
                 <description>Deck 2: Switch Loops on/off</description>
-                <status>0xB1</status>
+                <status>0xB0</status>
                 <midino>0x55</midino>
                 <options>
                     <normal/>
@@ -898,12 +916,12 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>loop_move_4_forward</key>
-                <description>Deck 1: Loop move forward 4 beats</description>
+                <key>DJ44.loopMoveForward</key>
+                <description>Deck 1: Loop move forward</description>
                 <status>0xB0</status>
                 <midino>0x51</midino>
                 <options>
-                    <normal/>
+                    <script-binding/>
                 </options>
             </control>
             <control>
@@ -918,15 +936,15 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>loop_move_4_forward</key>
-                <description>Deck 2: Loop move forward 4 beats</description>
+                <key>DJ44.loopMoveForward</key>
+                <description>Deck 1: Loop move forward</description>
                 <status>0xB1</status>
                 <midino>0x51</midino>
                 <options>
-                    <normal/>
+                    <script-binding/>
                 </options>
             </control>
-            <control>
+             <control>
                 <group>[Channel2]</group>
                 <key>hotcue_1_clear</key>
                 <description>MIDI Learned from 6 messages.</description>
@@ -1028,12 +1046,12 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>loop_move_4_backward</key>
-                <description>Deck 1: Loop move backward 4 beats</description>
+                <key>DJ44.loopMoveBackward</key>
+                <description>Deck 1: Loop move backward</description>
                 <status>0xB0</status>
                 <midino>0x4F</midino>
                 <options>
-                    <normal/>
+                    <script-binding/>
                 </options>
             </control>
             <control>
@@ -1048,12 +1066,12 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>loop_move_4_backward</key>
-                <description>Deck 2: Loop move backward 4 beats</description>
+                <key>DJ44.loopMoveBackward</key>
+                <description>Deck 1: Loop move backward</description>
                 <status>0xB1</status>
                 <midino>0x4F</midino>
                 <options>
-                    <normal/>
+                    <script-binding/>
                 </options>
             </control>
             <control>
