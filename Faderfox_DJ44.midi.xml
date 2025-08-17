@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<MixxxControllerPreset mixxxVersion="" schemaVersion="1">
+<MixxxControllerPreset mixxxVersion="2.0" schemaVersion="1">
     <info>
         <name>Faderfox DJ-44</name>
         <author>bgmnt</author>
@@ -148,6 +148,16 @@
                     <normal/>
                 </options>
             </control>
+            <control>
+                <group>[Master]</group>
+                <key>maximize_library</key>
+                <description>Toggle maximizing the library</description>
+                <status>0xB0</status>
+                <midino>0x73</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>            
             <control>
                 <group>[Master]</group>
                 <key>crossfader</key>
@@ -300,12 +310,32 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>playposition</key>
+                <key>DJ44.nudgePlayposition</key>
                 <description>Deck 1: Strip Search</description>
                 <status>0xB0</status>
                 <midino>0x18</midino>
                 <options>
-                    <diff/>
+					<script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>DJ44.nudgePlaypositionSlow</key>
+                <description>Deck 1: Strip Search Slow</description>
+                <status>0xB0</status>
+                <midino>0x19</midino>
+                <options>
+					<script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>start</key>
+                <description>Jump to first cue (usually first beat)</description>
+                <status>0xB0</status>
+                <midino>0x52</midino>
+                <options>
+                    <normal/>
                 </options>
             </control>
             <control>
@@ -330,12 +360,32 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>playposition</key>
+                <key>DJ44.nudgePlayposition</key>
                 <description>Deck 2: Strip Search</description>
                 <status>0xB1</status>
                 <midino>0x18</midino>
                 <options>
-                    <diff/>
+					<script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>DJ44.nudgePlaypositionSlow</key>
+                <description>Deck 2: Strip Search Slow</description>
+                <status>0xB1</status>
+                <midino>0x19</midino>
+                <options>
+					<script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>start</key>
+                <description>Jump to first cue (usually first beat)</description>
+                <status>0xB1</status>
+                <midino>0x52</midino>
+                <options>
+                    <normal/>
                 </options>
             </control>
             <control>
@@ -629,9 +679,9 @@
                 </options>
             </control>
             <control>
-                <group>[Master]</group>
-                <key>maximize_library</key>
-                <description>Toggle maximizing the library</description>
+                <group>[Channel2]</group>
+                <key>quantize</key>
+                <description>Quantize deck B</description>
                 <status>0xB0</status>
                 <midino>0x6A</midino>
                 <options>
@@ -639,11 +689,67 @@
                 </options>
             </control>
             <control>
+                <group>[Channel2]</group>
+                <key>slip_enabled</key>
+                <description>Slip mode deck B</description>
+                <status>0xB0</status>
+                <midino>0x6B</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+            <control>
                 <group>[Channel1]</group>
-                <key>reloop_exit</key>
-                <description>Deck 1: Switch Loop on/off</description>
+                <key>beatloop_activate</key>
+                <description>Deck 1: Set Loop-In marker, Toggle on/off</description>
                 <status>0xB0</status>
                 <midino>0x54</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>DJ44.onLoopAdjust</key>
+                <status>0xB0</status>
+                <midino>0x1A</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>DJ44.onLoopAdjust</key>
+                <status>0xB1</status>
+                <midino>0x1A</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>DJ44.onBeatJumpSizeAdjust</key>
+                <status>0xB0</status>
+                <midino>0x1B</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>DJ44.onBeatJumpSizeAdjust</key>
+                <status>0xB1</status>
+                <midino>0x1B</midino>
+                <options>
+                    <script-binding/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>reloop_toggle</key>
+                <description>Deck 2: Switch Loops on/off</description>
+                <status>0xB0</status>
+                <midino>0x55</midino>
                 <options>
                     <normal/>
                 </options>
@@ -660,10 +766,20 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>reloop_exit</key>
-                <description>Deck 1: Switch Loop on/off</description>
+                <key>beatloop_activate</key>
+                <description>Deck 2: Set Loop-In marker, Toggle on/off</description>
                 <status>0xB1</status>
                 <midino>0x54</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>reloop_toggle</key>
+                <description>Deck 2: Switch Loop on/off</description>
+                <status>0xB1</status>
+                <midino>0x55</midino>
                 <options>
                     <normal/>
                 </options>
@@ -700,26 +816,6 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>volume</key>
-                <description>MIDI Learned from 123 messages.</description>
-                <status>0xB0</status>
-                <midino>0x12</midino>
-                <options>
-                    <soft-takeover/>
-                </options>
-            </control>
-            <control>
-                <group>[Channel2]</group>
-                <key>volume</key>
-                <description>MIDI Learned from 125 messages.</description>
-                <status>0xB1</status>
-                <midino>0x12</midino>
-                <options>
-                    <soft-takeover/>
-                </options>
-            </control>
-            <control>
-                <group>[Channel1]</group>
                 <key>hotcue_2_clear</key>
                 <description>MIDI Learned from 6 messages.</description>
                 <status>0xB0</status>
@@ -739,11 +835,21 @@
                 </options>
             </control>
             <control>
-                <group>[PreviewDeck1]</group>
-                <key>LoadSelectedTrackAndPlay</key>
-                <description>Load selected track in the preview deck and play</description>
+                <group>[Channel1]</group>
+                <key>quantize</key>
+                <description>Quantize deck A</description>
                 <status>0xB0</status>
                 <midino>0x68</midino>
+                <options>
+                    <normal/>
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>slip_enabled</key>
+                <description>Slip mode deck A</description>
+                <status>0xB0</status>
+                <midino>0x69</midino>
                 <options>
                     <normal/>
                 </options>
@@ -810,12 +916,12 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>loop_move_4_forward</key>
-                <description>Deck 1: Loop move forward 4 beats</description>
+                <key>DJ44.loopMoveForward</key>
+                <description>Deck 1: Loop move forward</description>
                 <status>0xB0</status>
                 <midino>0x51</midino>
                 <options>
-                    <normal/>
+                    <script-binding/>
                 </options>
             </control>
             <control>
@@ -830,15 +936,15 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>loop_move_4_forward</key>
-                <description>Deck 2: Loop move forward 4 beats</description>
+                <key>DJ44.loopMoveForward</key>
+                <description>Deck 1: Loop move forward</description>
                 <status>0xB1</status>
                 <midino>0x51</midino>
                 <options>
-                    <normal/>
+                    <script-binding/>
                 </options>
             </control>
-            <control>
+             <control>
                 <group>[Channel2]</group>
                 <key>hotcue_1_clear</key>
                 <description>MIDI Learned from 6 messages.</description>
@@ -860,7 +966,7 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>beatjump_1_forward</key>
+                <key>rate_temp_up</key>
                 <description>MIDI Learned from 2 messages.</description>
                 <status>0xB0</status>
                 <midino>0x50</midino>
@@ -880,7 +986,7 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>beatjump_1_forward</key>
+                <key>rate_temp_up</key>
                 <description>MIDI Learned from 4 messages.</description>
                 <status>0xB1</status>
                 <midino>0x50</midino>
@@ -940,12 +1046,12 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>loop_move_4_backward</key>
-                <description>Deck 1: Loop move backward 4 beats</description>
+                <key>DJ44.loopMoveBackward</key>
+                <description>Deck 1: Loop move backward</description>
                 <status>0xB0</status>
                 <midino>0x4F</midino>
                 <options>
-                    <normal/>
+                    <script-binding/>
                 </options>
             </control>
             <control>
@@ -960,12 +1066,12 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>loop_move_4_backward</key>
-                <description>Deck 2: Loop move backward 4 beats</description>
+                <key>DJ44.loopMoveBackward</key>
+                <description>Deck 1: Loop move backward</description>
                 <status>0xB1</status>
                 <midino>0x4F</midino>
                 <options>
-                    <normal/>
+                    <script-binding/>
                 </options>
             </control>
             <control>
@@ -990,7 +1096,7 @@
             </control>
             <control>
                 <group>[Channel1]</group>
-                <key>beatjump_1_backward</key>
+                <key>rate_temp_down</key>
                 <description>MIDI Learned from 4 messages.</description>
                 <status>0xB0</status>
                 <midino>0x4E</midino>
@@ -1010,7 +1116,7 @@
             </control>
             <control>
                 <group>[Channel2]</group>
-                <key>beatjump_1_backward</key>
+                <key>rate_temp_down</key>
                 <description>MIDI Learned from 6 messages.</description>
                 <status>0xB1</status>
                 <midino>0x4E</midino>
@@ -1272,9 +1378,18 @@
         <outputs>
             <output>
                 <group>[Channel1]</group>
-                <key>hotcue_2_enabled</key>
+                <key>hotcue_2_status</key>
                 <status>0xB0</status>
                 <midino>0x3C</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel1]</group>
+                <key>hotcue_2_status</key>
+                <status>0xB0</status>
+                <midino>0x3D</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1290,9 +1405,18 @@
             </output>
             <output>
                 <group>[Channel2]</group>
-                <key>hotcue_7_enabled</key>
+                <key>hotcue_7_status</key>
                 <status>0xB1</status>
                 <midino>0x46</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel2]</group>
+                <key>hotcue_7_status</key>
+                <status>0xB1</status>
+                <midino>0x47</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1353,7 +1477,7 @@
             </output>
             <output>
                 <group>[Channel2]</group>
-                <key>hotcue_8_enabled</key>
+                <key>hotcue_8_status</key>
                 <status>0xB1</status>
                 <midino>0x48</midino>
                 <on>0x00</on>
@@ -1361,7 +1485,16 @@
                 <maximum>0</maximum>
             </output>
             <output>
-                <group>[QuickEffectRack1_[Channel2]</group>
+                <group>[Channel2]</group>
+                <key>hotcue_8_status</key>
+                <status>0xB1</status>
+                <midino>0x49</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[QuickEffectRack1_[Channel2]]</group>
                 <key>enabled</key>
                 <status>0xB1</status>
                 <midino>0x32</midino>
@@ -1380,9 +1513,18 @@
             </output>
             <output>
                 <group>[Channel2]</group>
-                <key>hotcue_5_enabled</key>
+                <key>hotcue_5_status</key>
                 <status>0xB1</status>
                 <midino>0x42</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel2]</group>
+                <key>hotcue_5_status</key>
+                <status>0xB1</status>
+                <midino>0x43</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1398,7 +1540,7 @@
             </output>
             <output>
                 <group>[Channel2]</group>
-                <key>hotcue_6_enabled</key>
+                <key>hotcue_6_status</key>
                 <status>0xB1</status>
                 <midino>0x44</midino>
                 <on>0x00</on>
@@ -1406,8 +1548,17 @@
                 <maximum>0</maximum>
             </output>
             <output>
+                <group>[Channel2]</group>
+                <key>hotcue_6_status</key>
+                <status>0xB1</status>
+                <midino>0x45</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
                 <group>[Channel1]</group>
-                <key>hotcue_7_enabled</key>
+                <key>hotcue_7_status</key>
                 <status>0xB0</status>
                 <midino>0x46</midino>
                 <on>0x00</on>
@@ -1415,7 +1566,16 @@
                 <maximum>0</maximum>
             </output>
             <output>
-                <group>[EffectRack1_EffectUnit1_Effec2]</group>
+                <group>[Channel1]</group>
+                <key>hotcue_7_status</key>
+                <status>0xB0</status>
+                <midino>0x47</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[EffectRack1_EffectUnit1_Effect2]</group>
                 <key>enabled</key>
                 <status>0xB0</status>
                 <midino>0x20</midino>
@@ -1425,7 +1585,7 @@
             </output>
             <output>
                 <group>[Channel1]</group>
-                <key>hotcue_8_enabled</key>
+                <key>hotcue_8_status</key>
                 <status>0xB0</status>
                 <midino>0x48</midino>
                 <on>0x00</on>
@@ -1433,7 +1593,16 @@
                 <maximum>0</maximum>
             </output>
             <output>
-                <group>[QuickEffectRack1_[Channel1]</group>
+                <group>[Channel1]</group>
+                <key>hotcue_8_status</key>
+                <status>0xB0</status>
+                <midino>0x49</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[QuickEffectRack1_[Channel1]]</group>
                 <key>enabled</key>
                 <status>0xB0</status>
                 <midino>0x32</midino>
@@ -1479,9 +1648,18 @@
             </output>
             <output>
                 <group>[Channel1]</group>
-                <key>hotcue_5_enabled</key>
+                <key>hotcue_5_status</key>
                 <status>0xB0</status>
                 <midino>0x42</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel1]</group>
+                <key>hotcue_5_status</key>
+                <status>0xB0</status>
+                <midino>0x43</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1506,7 +1684,7 @@
             </output>
             <output>
                 <group>[Channel2]</group>
-                <key>hotcue_3_enabled</key>
+                <key>hotcue_3_status</key>
                 <status>0xB1</status>
                 <midino>0x3E</midino>
                 <on>0x00</on>
@@ -1514,10 +1692,28 @@
                 <maximum>0</maximum>
             </output>
             <output>
+                <group>[Channel2]</group>
+                <key>hotcue_3_status</key>
+                <status>0xB1</status>
+                <midino>0x3F</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
                 <group>[Channel1]</group>
-                <key>hotcue_6_enabled</key>
+                <key>hotcue_6_status</key>
                 <status>0xB0</status>
                 <midino>0x44</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel1]</group>
+                <key>hotcue_6_status</key>
+                <status>0xB0</status>
+                <midino>0x45</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1533,9 +1729,18 @@
             </output>
             <output>
                 <group>[Channel2]</group>
-                <key>hotcue_4_enabled</key>
+                <key>hotcue_4_status</key>
                 <status>0xB1</status>
                 <midino>0x40</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel2]</group>
+                <key>hotcue_4_status</key>
+                <status>0xB1</status>
+                <midino>0x41</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1551,9 +1756,18 @@
             </output>
             <output>
                 <group>[Channel2]</group>
-                <key>hotcue_1_enabled</key>
+                <key>hotcue_1_status</key>
                 <status>0xB1</status>
                 <midino>0x3A</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel2]</group>
+                <key>hotcue_1_status</key>
+                <status>0xB1</status>
+                <midino>0x3B</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1578,9 +1792,18 @@
             </output>
             <output>
                 <group>[Channel2]</group>
-                <key>hotcue_2_enabled</key>
+                <key>hotcue_2_status</key>
                 <status>0xB1</status>
                 <midino>0x3C</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel2]</group>
+                <key>hotcue_2_status</key>
+                <status>0xB1</status>
+                <midino>0x3D</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1596,9 +1819,18 @@
             </output>
             <output>
                 <group>[Channel1]</group>
-                <key>hotcue_3_enabled</key>
+                <key>hotcue_3_status</key>
                 <status>0xB0</status>
                 <midino>0x3E</midino>
+                <on>0x00</on>
+                <off>0x7B</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel1]</group>
+                <key>hotcue_3_status</key>
+                <status>0xB0</status>
+                <midino>0x3F</midino>
                 <on>0x00</on>
                 <off>0x7B</off>
                 <maximum>0</maximum>
@@ -1641,9 +1873,18 @@
             </output>
             <output>
                 <group>[Channel1]</group>
-                <key>hotcue_4_enabled</key>
+                <key>hotcue_4_status</key>
                 <status>0xB0</status>
                 <midino>0x40</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel1]</group>
+                <key>hotcue_4_status</key>
+                <status>0xB0</status>
+                <midino>0x41</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
@@ -1686,9 +1927,18 @@
             </output>
             <output>
                 <group>[Channel1]</group>
-                <key>hotcue_1_enabled</key>
+                <key>hotcue_1_status</key>
                 <status>0xB0</status>
                 <midino>0x3A</midino>
+                <on>0x00</on>
+                <off>0x7F</off>
+                <maximum>0</maximum>
+            </output>
+            <output>
+                <group>[Channel1]</group>
+                <key>hotcue_1_status</key>
+                <status>0xB0</status>
+                <midino>0x3B</midino>
                 <on>0x00</on>
                 <off>0x7F</off>
                 <maximum>0</maximum>
